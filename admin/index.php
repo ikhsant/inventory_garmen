@@ -30,6 +30,7 @@ if($_SESSION['akses_level'] == "admin" | $_SESSION['akses_level'] == "gudang" | 
 $barang = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_masuk) - SUM(qty_keluar) as sisa_total FROM stok"));
 $barang_masuk = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_masuk) as barang_masuk FROM stok"));
 $barang_keluar = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_keluar) as barang_keluar FROM stok"));
+$pegawai = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM user"));
 
 ?>
 
@@ -77,6 +78,22 @@ $barang_keluar = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_keluar) a
                 <div class="col-xs-9 text-right">
                     <span style="font-size: 50px"><?php echo $barang_keluar['barang_keluar'] ?></span>
                     <div>Barang Keluar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-user fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <span style="font-size: 50px"><?php echo $pegawai ?></span>
+                    <div>Pegawai</div>
                 </div>
             </div>
         </div>
