@@ -3,7 +3,7 @@
  * @Author: Ikhsan
  * @Date:   2018-09-19 22:11:29
  * @Last Modified by:   Ikhsan
- * @Last Modified time: 2018-09-20 21:00:15
+ * @Last Modified time: 2018-09-21 06:02:06
  */
 
 include '../include/auth.php';
@@ -25,7 +25,7 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php if(isset($title)){echo $title.' - '; }?><?php echo $setting['nama_website']; ?></title>
+	<title><?php if(isset($title)){echo $title.' - '; }?><?php echo $setting['nama_website']; ?> | <?php echo $setting['deskripsi']; ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" type="image/png" href="../logo.png">
 	<link rel="stylesheet" href="../assets/css/spacelab-bootstrap.min.css">

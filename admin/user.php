@@ -4,9 +4,9 @@
  * @Author: Ikhsan
  * @Date:   2018-09-19 22:11:29
  * @Last Modified by:   Ikhsan
- * @Last Modified time: 2018-09-20 22:20:07
+ * @Last Modified time: 2018-09-21 06:04:43
  */
-$title = 'User';
+$title = 'Pegawai';
 include "../include/header.php";
 ?>
 

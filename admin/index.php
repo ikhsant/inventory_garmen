@@ -59,7 +59,7 @@ $barang_keluar = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_keluar) a
                     <i class="fa fa-arrow-circle-o-down fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                    <span style="font-size: 50px"><?php echo $barang_keluar['barang_keluar'] ?></span>
+                    <span style="font-size: 50px"><?php echo $barang_masuk['barang_masuk'] ?></span>
                     <div>Barang masuk</div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ $barang_keluar = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_keluar) a
                     <i class="fa fa-arrow-circle-o-up fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
-                    <span style="font-size: 50px"><?php echo $barang_masuk['barang_masuk'] ?></span>
+                    <span style="font-size: 50px"><?php echo $barang_keluar['barang_keluar'] ?></span>
                     <div>Barang Keluar</div>
                 </div>
             </div>
@@ -94,6 +94,7 @@ $barang_keluar = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_keluar) a
         </div>
     </div>
 </div>
+
 
 <?php  
 $b1 = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_masuk) - SUM(qty_keluar) as sisa_barang, stok.* FROM stok WHERE barang = '1' "));
