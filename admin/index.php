@@ -112,6 +112,18 @@ $pegawai = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM user"));
     </div>
 </div>
 
+<div class="col-md-6">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Barang
+        </div>
+        <div class="panel-body">
+            <canvas id="myChart2" height="200px"></canvas>
+        </div>
+    </div>
+</div>
+
 
 <?php  
 $b1 = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_masuk) - SUM(qty_keluar) as sisa_barang, stok.* FROM stok WHERE barang = '1' "));
@@ -126,7 +138,28 @@ $b4 = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(qty_masuk) - SUM(qty_kel
         data: {
             labels: ["sae-a", "sae-u", "Jersey panny", "awl"],
             datasets: [{
-                label: '# Kehadiran',
+                label: '# Jumlah Barang',
+                data: [<?php echo $b1['sisa_barang'] ?>, <?php echo $b2['sisa_barang'] ?>, <?php echo $b3['sisa_barang'] ?>, <?php echo $b4['sisa_barang'] ?>],
+                backgroundColor: [
+                'rgb(255, 128, 170)',
+                'rgb(0, 255, 153)',
+                'rgb(0, 191, 255)',
+                'rgb(255, 128, 0)'
+                ]
+            }]
+        },
+
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById("myChart2").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["sae-a", "sae-u", "Jersey panny", "awl"],
+            datasets: [{
+                label: '# Jumlah Barang',
                 data: [<?php echo $b1['sisa_barang'] ?>, <?php echo $b2['sisa_barang'] ?>, <?php echo $b3['sisa_barang'] ?>, <?php echo $b4['sisa_barang'] ?>],
                 backgroundColor: [
                 'rgb(255, 128, 170)',
