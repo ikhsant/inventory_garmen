@@ -45,7 +45,7 @@ $pegawai = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM user"));
                 </div>
                 <div class="col-xs-9 text-right">
                     <span style="font-size: 50px"><?php echo $barang['sisa_total'] ?></span>
-                    <div><b>Sisa Barang</b></div>
+                    <div><b>Total Barang</b></div>
                 </div>
             </div>
         </div>
